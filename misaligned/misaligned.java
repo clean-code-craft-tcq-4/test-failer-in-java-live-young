@@ -2,6 +2,8 @@ public class misaligned {
 	
     static int printColorMap(String[] majorColors,String[] minorColors) { 
         int i = 0, j = 0;
+	    System.out.println(majorColors.length * minorColors.length + " pair color code");
+		System.out.println("Pair no|Major color|Minor color");
         for(i = 0; i < majorColors.length; i++) {
             for(j = 0; j <minorColors.length ; j++) {
                 System.out.println(formatColorMap(i,j, majorColors, minorColors));
