@@ -1,6 +1,5 @@
 public class misaligned {
 	
-    
     static int printColorMap(String[] majorColors,String[] minorColors) { 
         int i = 0, j = 0;
         for(i = 0; i < majorColors.length; i++) {
