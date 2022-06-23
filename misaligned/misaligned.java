@@ -18,7 +18,7 @@ public class misaligned {
     
     public static void main(String[] args) { 
         int result = printColorMap(majorColors, minorColors);
-       assert(result == 25);
+       assert(result == 24);
         System.out.println("All is well (maybe!)");
     }
 }
