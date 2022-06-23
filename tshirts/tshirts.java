@@ -10,8 +10,8 @@ public class tshirts {
     }
 
     public static void main(String[] args) { 
-    	TshirtTester tShirtTester = new TshirtTester();
-    	tShirtTester.tshirtSizeTest();
+    	tshirtTester tShirtTest = new tshirtTester();
+    	tShirtTest.tshirtSizeTest();
         System.out.println("All is well (maybe!)");
     }
 }
