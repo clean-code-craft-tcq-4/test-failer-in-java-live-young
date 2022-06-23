@@ -11,7 +11,7 @@ public class misaligned {
     }
     
     static String formatColorMap (int i, int j, String[] majorColors,String[] minorColors) {	
-		return  (i * minorColors.length )+ j+1+"|"+ majorColors[i]+"|"+minorColors[j];	
+		return  (i * minorColors.length )+ j+1+"	"+ majorColors[i]+"	"+minorColors[j];	
     }
     
     public static void main(String[] args) { 
