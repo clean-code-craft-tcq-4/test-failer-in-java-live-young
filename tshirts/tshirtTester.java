@@ -1,5 +1,5 @@
 
-public class TshirtTester {
+public class tshirtTester {
 	public static void tshirtSizeTest() {
 		assert(tshirts.size(37) == "S");
         assert(tshirts.size(38) == "M");
