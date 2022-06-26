@@ -15,7 +15,7 @@ public class misaligned {
     }
     static int getPairNum(int majorColorIndex, int minorColorIndex ,String[] majorColors,String[] minorColors )
     {
-	    return  (i * minorColors.length )+ j+1;
+	    return  (majorColorIndex * minorColors.length )+ minorColorIndex+1;
 	    
     }
     public static void main(String[] args) { 
