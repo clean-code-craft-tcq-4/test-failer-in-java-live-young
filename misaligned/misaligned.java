@@ -13,14 +13,17 @@ public class misaligned {
     static String formatColorMap (int i, int j, String[] majorColors,String[] minorColors) {	
 		return  (i * minorColors.length )+ j+1+"|"+ majorColors[i]+"|"+minorColors[j];	
     }
-    
+    static int getPairNum(int majorColorIndex, int minorColorIndex ,String[] majorColors,String[] minorColors )
+    {
+	    return  (i * minorColors.length )+ j+1;
+	    
+    }
     public static void main(String[] args) { 
     	String[] majorColors = {"White", "Red", "Black", "Yellow", "Violet"};
         String[] minorColors = {"Blue", "Orange", "Green", "Brown", "Slate"};
-        String checkResult = "13|Black|Green";
         int result = printColorMap(majorColors, minorColors);
         assert(result == 25);
-        assert(checkResult.equals(formatColorMap(2,3,majorColors,minorColors)));
+        assert(getPairNum(2,3,majorColors, minorColors)==13);
         System.out.println("All is well (maybe!)");
     }
 }
