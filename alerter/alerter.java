@@ -1,18 +1,8 @@
 public class alerter {
     static int alertFailureCount = 0;
-    public static int networkAlertStub(float celcius) {
-        System.out.println("ALERT: Temperature is " + celcius + " celcius");
-        // Return 200 for ok
-        // Return 500 for not-ok
-        // stub always succeeds and returns 200
-        if(celcius > 200) {
-        	return 500;
-        }
-        return 200;
-    }
     static void alertInCelcius(float farenheit ) {
         float celcius = (farenheit - 32) * 5 / 9;
-        int returnCode = networkAlertStub(celcius);
+        int returnCode = alertStub.sendRequset(celcius);
         if (returnCode != 200) {
             // non-ok response is not an error! Issues happen in life!
             // let us keep a count of failures to report
@@ -22,6 +12,7 @@ public class alerter {
         }
     }
     public static void main(String[] args) {
+        IAlerter alertStub = new NetworkAlertStub();
     	alertInCelcius(400.5f);
         assert(alertFailureCount ==1);
         alertInCelcius(303.6f);
