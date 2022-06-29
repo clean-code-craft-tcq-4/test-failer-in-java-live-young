@@ -23,7 +23,7 @@ public class misaligned {
         String[] minorColors = {"Blue", "Orange", "Green", "Brown", "Slate"};
         int result = printColorMap(majorColors, minorColors);
         assert(result == 25);
-        assert(getPairNum(2,3,majorColors, minorColors)==13);
+        assert(getPairNum(2,3,majorColors, minorColors)==14);
         System.out.println("All is well (maybe!)");
     }
 }
