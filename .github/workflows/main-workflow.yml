@@ -18,14 +18,24 @@ jobs:
     - name: tshirts fail
       run: |
         cd tshirts
-        bash ../.github/workflows/expectfail.sh java -ea tshirts.java
+        java -ea tshirts.java
 
-    - name: misaligned fail
+    - name: Build
       run: |
         cd misaligned
-        bash ../.github/workflows/expectfail.sh java -ea misaligned.java
+        javac misaligned.java
 
-    - name: alerter fail
+    - name: misaligned pass
+      run: |
+        cd misaligned
+        java -ea  misaligned
+
+    - name: Build
       run: |
         cd alerter
-        bash ../.github/workflows/expectfail.sh java -ea alerter.java
+        javac alerter.java    
+
+    - name: alerter pass
+      run: |
+        cd alerter
+        java -ea alerter
