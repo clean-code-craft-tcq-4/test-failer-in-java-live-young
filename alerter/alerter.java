@@ -1,6 +1,6 @@
 public class alerter {
     static int alertFailureCount = 0;
-    static void alertInCelcius(float farenheit ) {
+    static void alertInCelcius(float farenheit, IAlerter alertStub ) {
         float celcius = (farenheit - 32) * 5 / 9;
         int returnCode = alertStub.sendRequset(celcius);
         if (returnCode != 200) {
@@ -13,17 +13,17 @@ public class alerter {
     }
     public static void main(String[] args) {
         IAlerter alertStub = new NetworkAlertStub();
-    	alertInCelcius(400.5f);
+    	alertInCelcius(400.5f, alertStub);
         assert(alertFailureCount ==1);
-        alertInCelcius(303.6f);
+        alertInCelcius(303.6f, alertStub);
         assert(alertFailureCount == 1);
-        alertInCelcius(30.5f);
+        alertInCelcius(30.5f, alertStub);
         assert(alertFailureCount ==1);
-        alertInCelcius(1000.5f);
+        alertInCelcius(1000.5f, alertStub);
         assert(alertFailureCount == 2);
-        alertInCelcius(-100.5f);
+        alertInCelcius(-100.5f, alertStub);
         assert(alertFailureCount ==2);
-        alertInCelcius(105f);
+        alertInCelcius(105f, alertStub);
         assert(alertFailureCount ==2);
         System.out.printf("%d alerts failed.\n", alertFailureCount);
         System.out.println("All is well (maybe!)\n");
