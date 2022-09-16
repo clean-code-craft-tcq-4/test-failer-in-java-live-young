@@ -17,7 +17,7 @@ public class alerter {
 		}
 	}
     public static void main(String[] args) {
-    	NetworkAlertStub alertStub = new NetworkAlertStub();
+    	IAlerter alertStub = new NetworkAlertStub();
     	alertInCelcius(400.5f, alertStub);
         assert(alertFailureCount ==1);
         alertInCelcius(303.6f, alertStub);
