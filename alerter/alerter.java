@@ -1,16 +1,21 @@
 public class alerter {
     static int alertFailureCount = 0;
-    static void alertInCelcius(float farenheit, NetworkAlertStub alertStub ) {
-        float celcius = (farenheit - 32) * 5 / 9;
-        int returnCode = alertStub.sendRequset(celcius);
-        if (returnCode != 200) {
-            // non-ok response is not an error! Issues happen in life!
-            // let us keep a count of failures to report
-            // However, this code doesn't count failures!
-            // Add a test below to catch this bug. Alter the stub above, if needed.
-            alertFailureCount += 1;
-        }
-    }
+    
+    static float convertFarenheitToCelcius(final float farenheit) {
+		return (farenheit - 32) * 5 / 9;
+
+	}
+	static void alertInCelcius(final float farenheit, final IAlerter alertStub) {
+		float celcius = convertFarenheitToCelcius(farenheit);
+		int returnCode = alertStub.sendRequset(celcius);
+		if (returnCode != 200) {
+			// non-ok response is not an error! Issues happen in life!
+			// let us keep a count of failures to report
+			// However, this code doesn't count failures!
+			// Add a test below to catch this bug. Alter the stub above, if needed.
+			alertFailureCount += 1;
+		}
+	}
     public static void main(String[] args) {
     	NetworkAlertStub alertStub = new NetworkAlertStub();
     	alertInCelcius(400.5f, alertStub);
