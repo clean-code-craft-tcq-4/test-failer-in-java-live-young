@@ -1,6 +1,6 @@
 public class alerter {
     static int alertFailureCount = 0;
-    static void alertInCelcius(float farenheit, IAlerter alertStub ) {
+    static void alertInCelcius(float farenheit, NetworkAlertStub alertStub ) {
         float celcius = (farenheit - 32) * 5 / 9;
         int returnCode = alertStub.sendRequset(celcius);
         if (returnCode != 200) {
@@ -12,7 +12,7 @@ public class alerter {
         }
     }
     public static void main(String[] args) {
-        IAlerter alertStub = new NetworkAlertStub();
+    	NetworkAlertStub alertStub = new NetworkAlertStub();
     	alertInCelcius(400.5f, alertStub);
         assert(alertFailureCount ==1);
         alertInCelcius(303.6f, alertStub);
